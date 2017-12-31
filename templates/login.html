@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  <div style="color:rgb(77, 34, 177); margin:36px" >    sse  server 
+    <input id ="sse_room_name" type="text" >
+    <button onclick="creat()">create room </button> 
+    <button onclick="join()">join room</button>
+  </div>
+<div style="color:rgb(77, 34, 177); margin:30px" > web socket 
+  <input id ="web_room_name" type="text" >
+  <button onclick="web_create()">create room </button> 
+  <button onclick="web_join()">join room</button>
+</div>
+<script>
+  function create() {
+    var name = document.getElementById("sse_room_name").value;
+    window.location="/wait/"+name;
+  }
+</script>
+
+<script>
+  function join() {
+    var name = document.getElementById("sse_room_name").value;
+    window.location="/join/"+name;
+ }
+ function web_create() {
+    var name = document.getElementById("web_room_name").value;
+    window.location="/room/"+name+"/1";
+  }
+  function web_join() {
+    var name = document.getElementById("web_room_name").value;
+    window.location="/room/"+name+"/0";
+  }
+</script>
+
+
+</body>
+</html>
